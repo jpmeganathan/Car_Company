@@ -1,0 +1,57 @@
+<div class="car_page">
+<%= form_for @sale_person, :html => {:class => "form-horizontal center",:multipart => true} do |f| %>
+  <% if @sale_person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sale_person.errors.count, "error") %> prohibited this sale person from being saved:</h2>
+
+      <ul>
+      <% @sale_person.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+      <%= f.label :sales_person_id, "Sale Person ID", class: "col-md-4 control-label" %>
+      <div class="col-md-6">
+          <%= f.text_field :sales_person_id, class: "form-control" %>
+      </div>
+  </div>
+   
+   <div class="form-group">
+      <%= f.label :first_name, "Firstname", class: "col-md-4 control-label" %>
+      <div class="col-md-6">
+          <%= f.text_field :first_name, class: "form-control" %>
+      </div>
+  </div>
+
+
+   <div class="form-group">
+      <%= f.label :last_name, "Lastname", class: "col-md-4 control-label" %>
+      <div class="col-md-6">
+          <%= f.text_field :last_name, class: "form-control" %>
+      </div>
+  </div>
+
+   <div class="form-group">
+      <%= f.label :address, "Address", class: "col-md-4 control-label" %>
+      <div class="col-md-6">
+          <%= f.text_field :address, class: "form-control" %>
+      </div>
+  </div>
+
+   <div class="form-group">
+      <%= f.label :phone_number, "Phone Number", class: "col-md-4 control-label" %>
+      <div class="col-md-6">
+          <%= f.text_field :phone_number, class: "form-control" %>
+      </div>
+  </div>
+ 
+  <div class="form-group">
+      <div class="col-md-4" style="margin-left: 40%;">
+       <%= f.submit "Submit", class: "btn btn-default btn-primary" %>  
+      </div>
+  </div>
+<% end %>
+</div>

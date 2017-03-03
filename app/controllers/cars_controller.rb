@@ -42,7 +42,7 @@ class CarsController < ApplicationController
     respond_to do |format|
       if @car.update(car_params)
         format.html { redirect_to cars_url, notice: 'Car was successfully updated.' }
-        format.json { render :show, status: :ok, location: @car }
+        format.json { render :index, status: :ok, location: @car }
       else
         format.html { render :edit }
         format.json { render json: @car.errors, status: :unprocessable_entity }
