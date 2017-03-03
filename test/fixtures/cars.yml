@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  car_id: 1
+  serial_no: MyString
+  make: MyString
+  model: MyString
+  color: MyString
+  year: 2017-03-03 11:45:05
+  car_for_sale: false
+
+two:
+  car_id: 1
+  serial_no: MyString
+  make: MyString
+  model: MyString
+  color: MyString
+  year: 2017-03-03 11:45:05
+  car_for_sale: false
