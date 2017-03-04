@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :services
+  resources :parts
+  resources :parts_useds
+  resources :service_mechanics
+  resources :service_tickets
+  resources :mechanics
   resources :sales
   resources :sale_people
   devise_for :users

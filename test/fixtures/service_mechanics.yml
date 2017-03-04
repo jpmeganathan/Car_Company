@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  service_machanic_id: 1
+  service_ticket_id: 1
+  service_id: 1
+  mechanic_id: 1
+  hours: 2017-03-04
+  comments: MyString
+  rate: 1
+
+two:
+  service_machanic_id: 1
+  service_ticket_id: 1
+  service_id: 1
+  mechanic_id: 1
+  hours: 2017-03-04
+  comments: MyString
+  rate: 1

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Service ticket:</strong>
+  <%= @service_ticket.service_ticket_id %>
+</p>
+
+<p>
+  <strong>Service ticket number:</strong>
+  <%= @service_ticket.service_ticket_number %>
+</p>
+
+<p>
+  <strong>Car:</strong>
+  <%= @service_ticket.car_id %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @service_ticket.customer_id %>
+</p>
+
+<p>
+  <strong>Date received:</strong>
+  <%= @service_ticket.date_received %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @service_ticket.comments %>
+</p>
+
+<p>
+  <strong>Date return to cutomer:</strong>
+  <%= @service_ticket.date_return_to_cutomer %>
+</p>
+
+<%= link_to 'Edit', edit_service_ticket_path(@service_ticket) %> |
+<%= link_to 'Back', service_tickets_path %>

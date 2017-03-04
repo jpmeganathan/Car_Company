@@ -1,0 +1,2 @@
+class ServiceMechanic < ApplicationRecord
+end

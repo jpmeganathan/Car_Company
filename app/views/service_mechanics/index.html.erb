@@ -1,0 +1,40 @@
+<% if user_signed_in? %>
+<div class="table_class car_class">
+<h3>Service Mechanics</h3>
+<div class="btn-group ">
+<%= link_to 'New Service Mechanic', new_service_mechanic_path,:class => "btn btn-primary" %>
+</div>
+</div>
+<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+    <thead style="background-color:#006b96;color:#fff;">
+    <tr>
+      <th>Sl.no</th>
+      <th>Service machanic</th>
+      <th>Service ticket</th>
+      <th>Service</th>
+      <th>Mechanic</th>
+      <th>Hours</th>
+      <th>Comments</th>
+      <th>Rate</th>
+      <th colspan="2">Action</th>
+    </tr>
+  </thead>
+  <%i=0%>
+  <tbody>
+    <% @service_mechanics.each do |service_mechanic| %>
+      <tr>
+        <td><%=i=i+1%></td>
+        <td><%= service_mechanic.service_machanic_id %></td>
+        <td><%= service_mechanic.service_ticket_id %></td>
+        <td><%= service_mechanic.service_id %></td>
+        <td><%= service_mechanic.mechanic_id %></td>
+        <td><%= service_mechanic.hours %></td>
+        <td><%= service_mechanic.comments %></td>
+        <td><%= service_mechanic.rate %></td>
+        <td><%= link_to '<i class="fa fa-pencil-square-o"></i>'.html_safe, edit_service_mechanic_path(service_mechanic) %></td>
+        <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, service_mechanic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%end%>

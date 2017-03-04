@@ -1,0 +1,2 @@
+module ServiceMechanicsHelper
+end

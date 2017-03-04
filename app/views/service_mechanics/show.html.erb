@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Service machanic:</strong>
+  <%= @service_mechanic.service_machanic_id %>
+</p>
+
+<p>
+  <strong>Service ticket:</strong>
+  <%= @service_mechanic.service_ticket_id %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @service_mechanic.service_id %>
+</p>
+
+<p>
+  <strong>Mechanic:</strong>
+  <%= @service_mechanic.mechanic_id %>
+</p>
+
+<p>
+  <strong>Hours:</strong>
+  <%= @service_mechanic.hours %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @service_mechanic.comments %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @service_mechanic.rate %>
+</p>
+
+<%= link_to 'Edit', edit_service_mechanic_path(@service_mechanic) %> |
+<%= link_to 'Back', service_mechanics_path %>

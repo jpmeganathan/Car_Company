@@ -1,0 +1,55 @@
+<div class="customer_page">
+<%= form_for @parts_used, :html => {:class => "form-horizontal center",:multipart => true} do |f| %>
+<% if parts_used.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(parts_used.errors.count, "error") %> prohibited this parts_used from being saved:</h2>
+
+      <ul>
+      <% parts_used.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+      <div class="form-group">
+        <%= f.label :parts_used_id, "Part Used ID", class: "col-md-4 control-label" %>
+        <div class="col-md-6">
+          <%= f.text_field :parts_used_id, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :part_id, "Part ID", class: "col-md-4 control-label" %>
+        <div class="col-md-6">
+          <%= f.text_field :part_id, class: "form-control" %>
+        </div>
+      </div>    
+
+      <div class="form-group">
+        <%= f.label :service_ticket_id, "Service Ticket ID", class: "col-md-4 control-label" %>
+        <div class="col-md-6">
+          <%= f.text_field :service_ticket_id, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :number_used, "Number Used", class: "col-md-4 control-label" %>
+        <div class="col-md-6">
+          <%= f.text_field :number_used, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :price, "Price", class: "col-md-4 control-label" %>
+        <div class="col-md-6">
+          <%= f.text_field :price, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+      <div class="col-md-4" style="margin-left: 40%;">
+      <%= f.submit "Submit", class: "btn btn-default btn-primary" %>  
+      </div>
+      </div>
+<% end %>

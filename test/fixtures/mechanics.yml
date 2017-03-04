@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  machanic_id: 1
+  first_name: MyString
+  last_name: MyString
+  address: MyString
+  Phone_number: MyString
+
+two:
+  machanic_id: 1
+  first_name: MyString
+  last_name: MyString
+  address: MyString
+  Phone_number: MyString

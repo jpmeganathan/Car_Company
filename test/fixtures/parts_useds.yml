@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  parts_used_id: 1
+  part_id: 1
+  service_ticket_id: 1
+  number_used: 1
+  price: 1.5
+
+two:
+  parts_used_id: 1
+  part_id: 1
+  service_ticket_id: 1
+  number_used: 1
+  price: 1.5

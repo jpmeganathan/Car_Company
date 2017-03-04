@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170303105051) do
+ActiveRecord::Schema.define(version: 20170304110635) do
 
   create_table "cars", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "car_id"
@@ -39,6 +39,36 @@ ActiveRecord::Schema.define(version: 20170303105051) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "mechanics", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "machanic_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "address"
+    t.string   "Phone_number"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "parts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "part_id"
+    t.integer  "part_number"
+    t.string   "description"
+    t.float    "purchase_price", limit: 24
+    t.float    "retail_price",   limit: 24
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "parts_useds", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "parts_used_id"
+    t.integer  "part_id"
+    t.integer  "service_ticket_id"
+    t.integer  "number_used"
+    t.float    "price",             limit: 24
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
   create_table "sale_people", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "sales_person_id"
     t.string   "first_name"
@@ -58,6 +88,38 @@ ActiveRecord::Schema.define(version: 20170303105051) do
     t.integer  "sales_person_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "service_mechanics", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "service_machanic_id"
+    t.integer  "service_ticket_id"
+    t.integer  "service_id"
+    t.integer  "mechanic_id"
+    t.date     "hours"
+    t.string   "comments"
+    t.integer  "rate"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  create_table "service_tickets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "service_ticket_id"
+    t.integer  "service_ticket_number"
+    t.integer  "car_id"
+    t.integer  "customer_id"
+    t.date     "date_received"
+    t.string   "comments"
+    t.date     "date_return_to_cutomer"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "services", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "service_id"
+    t.string   "service_name"
+    t.float    "hour_rate",    limit: 24
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

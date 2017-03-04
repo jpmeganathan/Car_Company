@@ -1,0 +1,40 @@
+<div class="customer_page">
+<%= form_for @service, :html => {:class => "form-horizontal center",:multipart => true} do |f| %>
+ <% if service.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(service.errors.count, "error") %> prohibited this service from being saved:</h2>
+
+      <ul>
+      <% service.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+      <div class="form-group">
+        <%= f.label :service_id, "Service ID", class: "col-md-4 control-label" %>
+        <div class="col-md-6">
+          <%= f.text_field :service_id, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :service_name, "Service Name", class: "col-md-4 control-label" %>
+        <div class="col-md-6">
+          <%= f.text_field :service_name, class: "form-control" %>
+        </div>
+      </div>    
+
+      <div class="form-group">
+        <%= f.label :hour_rate, "Hour Rate", class: "col-md-4 control-label" %>
+        <div class="col-md-6">
+          <%= f.text_field :hour_rate, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+      <div class="col-md-4" style="margin-left: 40%;">
+      <%= f.submit "Submit", class: "btn btn-default btn-primary" %>  
+      </div>
+      </div>
+<% end %>

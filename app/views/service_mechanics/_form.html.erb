@@ -1,0 +1,69 @@
+<div class="customer_page">
+<%= form_for @service_mechanic, :html => {:class => "form-horizontal center",:multipart => true} do |f| %>
+ <% if service_mechanic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(service_mechanic.errors.count, "error") %> prohibited this service_mechanic from being saved:</h2>
+
+      <ul>
+      <% service_mechanic.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+      <div class="form-group">
+        <%= f.label :service_machanic_id, "Service Mechanic ID", class: "col-md-4 control-label" %>
+        <div class="col-md-6">
+          <%= f.text_field :service_machanic_id, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :service_ticket_id, "Service Ticket ID", class: "col-md-4 control-label" %>
+        <div class="col-md-6">
+          <%= f.text_field :service_ticket_id, class: "form-control" %>
+        </div>
+      </div>    
+
+      <div class="form-group">
+        <%= f.label :service_id, "Service ID", class: "col-md-4 control-label" %>
+        <div class="col-md-6">
+          <%= f.text_field :service_id, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :mechanic_id, "Mechanic ID", class: "col-md-4 control-label" %>
+        <div class="col-md-6">
+          <%= f.text_field :mechanic_id, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :hours, "Hours", class: "col-md-4 control-label" %>
+        <div class="col-md-6">
+          <%= f.text_field :hours, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :comments, "Comments", class: "col-md-4 control-label" %>
+        <div class="col-md-6">
+          <%= f.text_field :comments, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :rate, "Rate", class: "col-md-4 control-label" %>
+        <div class="col-md-6">
+          <%= f.text_field :rate, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+      <div class="col-md-4" style="margin-left: 40%;">
+      <%= f.submit "Submit", class: "btn btn-default btn-primary" %>  
+      </div>
+      </div>
+<% end %>

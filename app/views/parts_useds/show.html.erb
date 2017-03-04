@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Parts used:</strong>
+  <%= @parts_used.parts_used_id %>
+</p>
+
+<p>
+  <strong>Part:</strong>
+  <%= @parts_used.part_id %>
+</p>
+
+<p>
+  <strong>Service ticket:</strong>
+  <%= @parts_used.service_ticket_id %>
+</p>
+
+<p>
+  <strong>Number used:</strong>
+  <%= @parts_used.number_used %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @parts_used.price %>
+</p>
+
+<%= link_to 'Edit', edit_parts_used_path(@parts_used) %> |
+<%= link_to 'Back', parts_useds_path %>

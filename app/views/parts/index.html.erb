@@ -1,0 +1,36 @@
+<% if user_signed_in? %>
+<div class="table_class car_class">
+<h3>Parts</h3>
+<div class="btn-group ">
+<%= link_to "New Parts", new_part_path, :class => "btn btn-primary"%>
+</div>
+</div>
+<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+    <thead style="background-color:#006b96;color:#fff;">
+    <tr>
+      <th>Sl.no</th>
+      <th>Part</th>
+      <th>Part number</th>
+      <th>Description</th>
+      <th>Purchase price</th>
+      <th>Retail price</th>
+      <th colspan="2">Action</th>
+    </tr>
+  </thead>
+  <%i=0%>
+  <tbody>
+    <% @parts.each do |part| %>
+      <tr>
+        <td><%=i=i+1%></td>
+        <td><%= part.part_id %></td>
+        <td><%= part.part_number %></td>
+        <td><%= part.description %></td>
+        <td><%= part.purchase_price %></td>
+        <td><%= part.retail_price %></td>
+        <td><%= link_to '<i class="fa fa-pencil-square-o"></i>'.html_safe, edit_part_path(part) %></td>
+        <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, part, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%end%>

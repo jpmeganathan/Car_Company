@@ -1,0 +1,2 @@
+class PartsUsed < ApplicationRecord
+end

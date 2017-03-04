@@ -1,0 +1,38 @@
+<% if user_signed_in? %>
+<div class="table_class car_class">
+<h3>Service Tickets</h3>
+<div class="btn-group ">
+<%= link_to "New Service Ticket", new_service_ticket_path, :class => "btn btn-primary"%>
+</div>
+</div>
+<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+    <thead style="background-color:#006b96;color:#fff;">
+    <tr>
+      <th>Service ticket</th>
+      <th>Service ticket number</th>
+      <th>Car</th>
+      <th>Customer</th>
+      <th>Date received</th>
+      <th>Comments</th>
+      <th>Date return to cutomer</th>
+      <th colspan="2">Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @service_tickets.each do |service_ticket| %>
+      <tr>
+        <td><%= service_ticket.service_ticket_id %></td>
+        <td><%= service_ticket.service_ticket_number %></td>
+        <td><%= service_ticket.car_id %></td>
+        <td><%= service_ticket.customer_id %></td>
+        <td><%= service_ticket.date_received %></td>
+        <td><%= service_ticket.comments %></td>
+        <td><%= service_ticket.date_return_to_cutomer %></td>
+        <td><%= link_to '<i class="fa fa-pencil-square-o"></i>'.html_safe, edit_service_ticket_path(service_ticket) %></td>
+        <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, service_ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%end%>
